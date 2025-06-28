@@ -1,0 +1,24 @@
+server:
+  port: 8082
+spring:
+  datasource:
+    url: jdbc:postgresql://host.docker.internal:5432/birth
+    username: postgres
+    password: 1234
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://192.168.0.100:8081/realms/LeaveApplication
+keycloak:
+  realm: LeaveApplication
+  auth-server-url: http://192.168.0.100:8081/auth
+  resource: leave_application
+  public-client: true
+  bearer-only: true 

@@ -1,0 +1,3 @@
+INSERT INTO form_template (id, title, schema_json) VALUES (1, 'Leave Application', '{"title": "Leave Application", "fields": [{"name": "reason", "type": "text", "required": true}, {"name": "from_date", "type": "date"}, {"name": "to_date", "type": "date"}]}');
+
+INSERT INTO workflow_definition (id, name, definition_json) VALUES (1, 'Leave Workflow', '{"states": ["Draft", "Review", "Approved", "Closed"], "transitions": [{"from": "Draft", "to": "Review", "allowed_roles": ["Employee"]}, {"from": "Review", "to": "Approved", "allowed_roles": ["Manager"]}, {"from": "Approved", "to": "Closed", "allowed_roles": ["HR"]}]}'); 
