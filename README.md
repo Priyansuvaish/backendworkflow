@@ -71,14 +71,14 @@ frontend/
 ├── src/
 │   ├── app/
 │   │   ├── api/
-|   │   │   ├── apply/                # API for Submission
-|   │   │   ├── auth/                 # API for authentication
-|   │   │   └── form-templates/        # API for Submission
+│   │   │   ├── apply/                # API for Submission
+│   │   │   ├── auth/                 # API for authentication
+│   │   │   └── form-templates/        # API for Submission
 │   │   ├── Head/
 │   │   │   └── page.tsx          # Main Head dashboard
 │   │   ├── Employee/
 │   │   │   └── page.tsx          # Main Employee dashboard
-|   │   │   ├── HR/
+│   │   ├── HR/
 │   │   │   └── page.tsx          # Main HR dashboard
 │   │   ├── Manager/
 │   │   │   └── page.tsx          # Main Manager dashboard
@@ -92,7 +92,7 @@ frontend/
 │   ├── services/
 │   │   └── formTemplateService.ts # API service layer
 │   └── types/
-|   |   ├── next-auth.d.tsx  # TypeScript interfaces
+│   │   ├── next-auth.d.tsx  # TypeScript interfaces
 │       └── form-template.ts      # TypeScript interfaces
 ```
 
@@ -100,7 +100,7 @@ frontend/
 backend/
 ├── src/main/java/com.example.workflow/
 │   ├── config/
-|   │   └── Securityconfig        # Authorozation configuration 
+│   │   └── Securityconfig        # Authorozation configuration 
 │   ├── controller/
 │   │   ├── FormSubmissionController               # API for Submission
 │   │   ├── FormTemplateController                 # API for from template
@@ -113,13 +113,13 @@ backend/
 │   │   ├── FormTemplate                 
 │   │   └── JsonToMapConverter           
 │   ├── repositary/
-|   │   ├── FormSubmissionRepositary               # API for Submission
+│   │   ├── FormSubmissionRepositary               # API for Submission
 │   │   └── FormTemplateRepositary                 # API for from template
-|   └── service/
+│   └── service/
 │   │   ├── FormSubmissionService              
 │   │   └── FormTemplateService               
 │   └── util/
-│   |   └── validator      # Validate the form submitted
+│   │   └── validator      # Validate the form submitted
 ```
 
 
@@ -182,7 +182,7 @@ cd backendworkflow
 - Run the Postgresql
 - Create a database.
 
-### 4. Configure  `aplication.yml`
+### 4. Configure  `application.yml`
 
 ```
 server:
