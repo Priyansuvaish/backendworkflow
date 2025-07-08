@@ -54,7 +54,7 @@ public class FormSubmissionController {
     }
 
     @PostMapping
-    public ResponseEntity<?> submitForm(@RequestParam Long templateId, @RequestBody Map<String, Object> submissionJson, Authentication authentication) {
+    public ResponseEntity<?> submitForm(@RequestParam String processid,@RequestParam Long templateId, @RequestBody Map<String, Object> submissionJson, Authentication authentication) {
         FormTemplate template = templateService.findById(templateId).orElse(null);
         if (template == null) return ResponseEntity.badRequest().build();
 
@@ -75,7 +75,7 @@ public class FormSubmissionController {
         submission = submissionService.save(submission);
         // 👇 Start workflow and get instance details
         ProcessInstance instance = runtimeService.startProcessInstanceByKey(
-                "myProcess",
+                processid,
                 Map.of(
                         "formSubmissionId", submission.getId(),
                         "username", authentication.getName()
